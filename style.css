@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.row {
+  display: flex;
+  background: #f9f9f9;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header {
+  font-weight: bold;
+  background: #e0e0e0;
+}
+
+/* .cell {
+  flex: 0 0 auto;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-right: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+} */
+
+.cell {
+  flex: 0 0 auto;
+  width: 150px;
+  min-width: 50px; /* Prevent columns from collapsing too much */
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-right: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cell:last-child {
+  border-right: none;
+}
+
+.resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  user-select: none;
+  background: transparent;
+}
+
+.resizer:hover {
+  background: #aaa;
+}
+.sort-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+.sort-icon {
+  margin-left: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 600px) {
+  .header,
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cell {
+    width: 100%;
+    white-space: normal; /* allow wrapping on small screens */
+    word-wrap: break-word;
+  }
+}
+.table {
+  position: relative;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+.spacer {
+  width: 100%;
+}
+
+#tableBody.body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+
